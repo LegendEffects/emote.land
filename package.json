@@ -1,0 +1,19 @@
+{
+  "name": "dismote",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "gifsicle": "^5.1.0",
+    "nuxt": "^2.14.6",
+    "sharp": "^0.26.1",
+    "skeleton-css": "^2.0.4"
+  },
+  "devDependencies": {}
+}
