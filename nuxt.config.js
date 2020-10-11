@@ -51,6 +51,6 @@ export default {
     extend() {
       require('./buildImages');
     },
-    publicPath: '/dismote/'
+    publicPath: '/Dismote/'
   }
 }
