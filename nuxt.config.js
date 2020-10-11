@@ -39,6 +39,9 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
   ],
 
+  router: {
+    base: '/Dismote/'
+  },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     postcss: {
@@ -51,6 +54,10 @@ export default {
     extend() {
       require('./buildImages');
     },
-    publicPath: '/Dismote/'
+    generate: {
+      ignore: [
+        'img'
+      ]
+    }
   }
 }

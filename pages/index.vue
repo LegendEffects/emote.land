@@ -10,7 +10,7 @@
 
           <div class="image-title">{{image.rel.replace('./', '')}}</div>
           <div class="image-container" title="Click to copy." @click.left="copy(image)" @click.right.prevent="copy(image, true)">
-            <img :src="image.abs" :alt="image.rel">
+            <img :src="'emojis/large/' + image.rel" :alt="image.rel">
           </div>
 
         </div>
