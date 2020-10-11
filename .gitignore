@@ -1,5 +1,6 @@
 # Custom
-static/emojis/large
+static/emojis/*
+!static/emojis/large/
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Node template
