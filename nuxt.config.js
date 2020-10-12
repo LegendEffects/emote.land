@@ -7,11 +7,17 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'dismote',
+    title: 'Emote.land',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: 'For when Discord Nitro costs too much.' },
+      { name: 'author', content: 'LegendEffects' },
+
+      { property: 'og:title', content: 'Emote Land' },
+      { property: 'og:image', content: 'https://emote.land/emojis/BongoCatHyper.gif' },
+      { property: 'og:url', content: 'https://emote.land' },
+      { property: 'og:description', content: 'For when Discord Nitro costs too much.' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

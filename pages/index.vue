@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <h1 class="title">Dismote</h1>
+      <h1 class="title">Emote.Land</h1>
       <h6 class="m-0"><span class="highlight">Left Click</span> for 48x48</h6>
       <h6 class="m-0"><span class="highlight">Right Click</span> for Original Size</h6>
 
