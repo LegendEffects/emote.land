@@ -15,6 +15,11 @@
 
         </div>
       </div>
+
+      <div class="credits">
+        <div>Created with ❤️ by <a href="https://legendeffects.co.uk">LegendEffects</a></div>
+        <div>Contribute on <a href="https://github.com/legendeffects/emote.land">Github</a></div>
+      </div>
     </div>
 
     <transition name="fade-up">
@@ -87,6 +92,11 @@ body {
 
 .m-0 {
   margin: 0;
+}
+
+.credits {
+  margin-top: 2rem;
+  font-size: 1rem;
 }
 
 .container {

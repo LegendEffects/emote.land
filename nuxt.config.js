@@ -20,7 +20,7 @@ export default {
       { property: 'og:description', content: 'For when Discord Nitro costs too much.' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/gif', href: 'https://emote.land/emojis/BongoCatHyper.gif' }
     ]
   },
 
