@@ -37,11 +37,13 @@
 
     <Nuxt />
 
-    <div class="container">
-      <div class="credits mt-4 pb-2">
-        <div>Created with ❤️ by <a href="https://legendeffects.co.uk">LegendEffects</a></div>
-        <div>Contribute on <a href="https://github.com/legendeffects/emote.land">Github</a></div>
-        <div class="color-sub">(yes, they're emojis, but emoji.land was £1000)</div>
+    <div class="mt-auto">
+      <div class="container">
+        <div class="credits py-4">
+          <div>Created with ❤️ by <a href="https://legendeffects.co.uk">LegendEffects</a></div>
+          <div>Contribute on <a href="https://github.com/legendeffects/emote.land">Github</a></div>
+          <div class="color-sub">(yes, they're emojis, but emoji.land was £1000)</div>
+        </div>
       </div>
     </div>
 

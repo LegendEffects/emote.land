@@ -1,0 +1,11 @@
+.btn {
+  padding: .5rem 1rem;
+  border-radius: .25rem;
+
+  text-decoration: none;
+
+  &:hover {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
