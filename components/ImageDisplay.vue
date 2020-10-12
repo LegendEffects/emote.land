@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="image-container" @click.left.prevent="copy(false)" @click.prevent.right="copy(true)">
+    <div class="image-container" @click.prevent.left.exact="copy(false)" @click.prevent.exact.right="copy(true)" @click.prevent.shift="favorite()">
       <img class="m-auto" :src="`emojis/large/${image.rel}`" :alt="image.rel">
     </div>
     <div class="image-title">{{ image.rel.replace('./', '') }}</div>
@@ -18,6 +18,11 @@ export default {
       navigator.clipboard.writeText(new URL(url, location).href);
 
       this.$alert((large) ? 'Large version copied to clipboard!' : 'Copied to clipboard!');
+    },
+    favorite() {
+      this.$favorites.toggle(this.image).then(added => {
+        this.$alert(added ? 'Added to favorites.' : 'Removed from favorites.');
+      });
     }
   }
 }

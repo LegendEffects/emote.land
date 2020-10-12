@@ -10,7 +10,7 @@
       <input class="search" v-model="search" placeholder="Type to search..." ref="searchBox" autofocus>
       <div class="suggestions" ref="suggestions">
         <div v-for="(suggestion, i) of suggestions" :key="i" class="entry text-sm px-2 py-1 color-sub" :class="{'selected': selected === i}">
-          <img v-if="suggestion.image !== null" :src="suggestion.image">
+          <img v-if="suggestion.image !== undefined" :src="suggestion.image">
           <div class="name">{{suggestion.name}}</div>
         </div>
       </div>
@@ -37,6 +37,23 @@ export default {
   }},
 
   created() {
+    // Routes
+    this.entries.push({
+      id: 'switchPage',
+      name: 'View all emotes',
+      run: () => {
+        this.$router.push('/');
+      }
+    })
+    this.entries.push({
+      id: 'switchPage',
+      name: 'View favorites',
+      run: () => {
+        this.$router.push('/favorites');
+      }
+    })
+
+    // Emotes
     const copyEmote = ({ shift }, attributes) => {
       navigator.clipboard.writeText(new URL(`${baseUrl}${(shift) ? 'large/' : ''}${attributes.rel}`, location).href);
       this.$alert((shift) ? 'Large version copied to clipboard!' : 'Copied to clipboard!')
@@ -81,6 +98,9 @@ export default {
     },
     execute(e) {
       const selected = this.suggestions[this.selected];
+      if(selected === undefined) {
+        return;
+      }
 
       if(selected.run) {
         selected.run({

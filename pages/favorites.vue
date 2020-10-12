@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <input class="search-box mb-4" v-model="search" placeholder="Search for an emote..." autofocus>
+      <input class="search-box mb-4" v-model="search" placeholder="Search for a favorited emote..." autofocus>
 
       <div class="grid text-center">
         <ImageDisplay class="column" v-for="(img, x) of filter(search)" :key="x" :image="img" />
@@ -21,7 +21,7 @@ export default {
 
   computed: {
     ...mapGetters({
-      'filter': 'emotes/filter'
+      'filter': 'favorites/filter'
     }),
   }
 }

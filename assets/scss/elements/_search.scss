@@ -1,0 +1,15 @@
+.search-box {
+  margin-top: 1rem;
+  background: var(--bg-color2);
+  color: var(--text-color);
+  width: 100%;
+  border-radius: .5rem;
+  padding: .75rem 1rem;
+  transition: all .2s ease;
+  outline: none;
+  border: 1px solid var(--bg-color2);
+
+  &:focus {
+    border: 1px solid var(--accent-color);
+  }
+}
