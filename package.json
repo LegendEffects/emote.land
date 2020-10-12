@@ -6,7 +6,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "build-images": "node buildImages.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",

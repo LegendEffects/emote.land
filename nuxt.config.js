@@ -53,9 +53,6 @@ export default {
         }
       }
     },
-    extend() {
-      require('./buildImages');
-    },
     generate: {
       ignore: [
         'img'
