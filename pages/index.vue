@@ -1,21 +1,21 @@
 <template>
   <div>
     <div class="container">
-      <h1 class="title">Emote.Land</h1>
-      <h6 class="m-0"><span class="highlight">Left Click</span> for 48x48</h6>
-      <h6 class="m-0"><span class="highlight">Right Click</span> for Original Size</h6>
+      <h1 class="title font-weight-normal mb-2 mt-2">Emote.Land</h1>
+      <h4 class="m-0 font-weight-light"><span class="highlight">Left Click</span> for 48x48</h4>
+      <h4 class="m-0 font-weight-light"><span class="highlight">Right Click</span> for Original Size</h4>
 
-      <input v-model="search" class="search-box" placeholder="Search...">
+      <input class="search-box mb-4" v-model="search" placeholder="Search..." autofocus>
 
-      <div class="row" v-for="(row, i) of chunkedImages" :key="i">
-        <div class="two columns" v-for="(image, x) of row" :key="x">
+      <div class="grid">
 
+        <div class="column" v-for="(image, x) of chunkedImages" :key="x">
           <div class="image-container" title="Click to copy." @click.left="copy(image)" @click.right.prevent="copy(image, true)">
             <img :src="'emojis/large/' + image.rel" :alt="image.rel">
           </div>
           <div class="image-title">{{image.rel.replace('./', '')}}</div>
-
         </div>
+
       </div>
 
       <div class="credits">
@@ -71,10 +71,7 @@ export default {
   },
   computed: {
     chunkedImages() {
-      const regexp = new RegExp(this.search, 'i')
-      const img = this.images.filter(el => regexp.test(el.rel));
-
-      return chunk(img, 6);
+      return this.images.filter(el => new RegExp(this.search, 'i').test(el.rel));
     }
   }
 }
@@ -96,15 +93,74 @@ body {
   margin-bottom: 2rem;
 }
 
+/** Utility */
 .m-0 {
   margin: 0;
 }
 
-.credits {
+.mt-2 {
+  margin-top: 1rem;
+}
+.mt-4  {
   margin-top: 2rem;
-  font-size: 1rem;
+}
+.mb-2 {
+  margin-bottom: 1rem;
+}
+.mb-4 {
+  margin-bottom: 2rem;
 }
 
+.font-weight-light {
+  font-weight: 400;
+}
+.font-weight-normal {
+  font-weight: 500;
+}
+
+.highlight, a:visited {
+  color: var(--accent-color);
+}
+
+/** Container */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+@media (min-width: 400px) {
+  .container {
+    width: 85%;
+    padding: 0;
+  }
+}
+@media (min-width: 550px) {
+  .container {
+    width: 80%;
+  }
+}
+
+.title {
+  color: var(--accent-color);
+  font-size: 2.75rem;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.grid .column {
+  flex: 0 0 16%;
+  margin: 0 .333%;
+}
+
+/** Search Box */
 .search-box {
   margin-top: 1rem;
   background: var(--bg-color2);
@@ -120,40 +176,40 @@ body {
   border: 1px solid var(--accent-color);
 }
 
-.container {
-  text-align: center;
+.credits {
+  margin-top: 2rem;
+  font-size: 1rem;
 }
 
+/** Image Container */
 .image-title {
   margin-bottom: 1.5rem;
   font-size: 1rem;
   word-break: break-all;
 }
-.highlight {
-  color: var(--accent-color);
-}
 .image-container {
+  display: flex;
+
   height: 5rem;
   width: 5rem;
-  text-align: center;
-
-  margin: 1rem;
-  margin-bottom: .5rem;
   padding: .5rem;
   border-radius: 1rem;
 
+  margin: 1rem auto;
+  margin-bottom: .5rem;
+
+  text-align: center;
+
   background: var(--bg-color2);
-  display: flex;
   cursor: pointer;
 }
 .image-container img {
   width: 100%;
   margin: auto;
 }
-.title {
-  color: var(--accent-color);
-}
 
+
+/** Alert */
 .alert-container {
   position: fixed;
   left: 50%;
@@ -173,6 +229,7 @@ body {
   left: -50%;
 }
 
+/** Transitions */
 .fade-up-enter-active, .fade-up-leave-active {
   transition: opacity .5s, transform .2s;
 }
