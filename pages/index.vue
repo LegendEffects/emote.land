@@ -10,10 +10,10 @@
       <div class="row" v-for="(row, i) of chunkedImages" :key="i">
         <div class="two columns" v-for="(image, x) of row" :key="x">
 
-          <div class="image-title">{{image.rel.replace('./', '')}}</div>
           <div class="image-container" title="Click to copy." @click.left="copy(image)" @click.right.prevent="copy(image, true)">
             <img :src="'emojis/large/' + image.rel" :alt="image.rel">
           </div>
+          <div class="image-title">{{image.rel.replace('./', '')}}</div>
 
         </div>
       </div>
@@ -125,8 +125,9 @@ body {
 }
 
 .image-title {
-  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   font-size: 1rem;
+  word-break: break-all;
 }
 .highlight {
   color: var(--accent-color);
@@ -137,7 +138,7 @@ body {
   text-align: center;
 
   margin: 1rem;
-  margin-top: .5rem;
+  margin-bottom: .5rem;
   padding: .5rem;
   border-radius: 1rem;
 
