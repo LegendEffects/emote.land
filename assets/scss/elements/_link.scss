@@ -1,0 +1,8 @@
+a {
+  color: var(--sub-color);
+  transition: color .25s ease;
+
+  &:hover {
+    color: var(--accent-color);
+  }
+}

@@ -1,0 +1,18 @@
+@import "transition";
+@import "utility";
+@import "elements";
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Roboto Mono', monospace;
+  margin-bottom: 2rem;
+}
+input {
+  font-family: 'Roboto Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}

@@ -1,0 +1,54 @@
+@for $i from 0 through 4 {
+  .m-#{$i} {
+    margin: .5rem * $i;
+  }
+  .my-#{$i} {
+    margin-top: .5rem * $i;
+    margin-bottom: .5rem * $i;
+  }
+  .mx-#{$i} {
+    margin-left: .5rem * $i;
+    margin-right: .5rem * $i;
+  }
+
+  .p-#{$i} {
+    padding: .5rem * $i;
+  }
+  .py-#{$i} {
+    padding-top: .5rem * $i;
+    padding-bottom: .5rem * $i;
+  }
+  .px-#{$i} {
+    padding-left: .5rem * $i;
+    padding-right: .5rem * $i;
+  }
+
+  @each $side in "top", "left", "bottom", "right" {
+    .m#{str-slice($string: $side, $start-at: 1, $end-at: 1)}-#{$i} {
+      margin-#{$side}: .5rem * $i;
+    }
+
+    // Padding
+    .p#{str-slice($string: $side, $start-at: 1, $end-at: 1)}-#{$i} {
+      padding-#{$side}: .5rem * $i;
+    }
+  }
+}
+
+.m-auto {
+  margin: auto;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+@each $side in "top", "left", "bottom", "right" {
+  .m#{str-slice($string: $side, $start-at: 1, $end-at: 1)}-auto {
+    margin-#{$side}: auto;
+  }
+}

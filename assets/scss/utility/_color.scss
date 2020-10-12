@@ -1,0 +1,21 @@
+$colors: (
+  'bg': 'var(--bg-color)',
+  'bg2': 'var(--bg-color2)',
+  'sub': 'var(--sub-color)',
+  'text': 'var(--text-color)',
+  'accent': 'var(--accent-color)'
+);
+
+@each $name, $var in $colors {
+  .color-#{$name}  {
+    color: #{$var};
+  }
+
+  .bg-#{$name} {
+    background-color: #{$var};
+  }
+
+  .glow-#{$name} {
+    box-shadow: 0 10px 20px -10px #{$var};
+  }
+}

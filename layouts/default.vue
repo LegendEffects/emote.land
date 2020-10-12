@@ -1,62 +1,49 @@
 <template>
-  <div>
+  <div class="color-text">
+    <div class="container">
+      <div class="d-flex mb-2 mt-2">
+        <div>
+          <h1 class="title color-accent font-weight-normal m-0">Emote.Land</h1>
+          <div class="color-sub">Now serving {{ emoteCount }} emotes.</div>
+        </div>
+
+        <div class="ml-auto text-right text-sm my-auto">
+          <h4 class="m-0 font-weight-light"><span class="color-accent">Left Click</span> for 48x48</h4>
+          <h4 class="m-0 font-weight-light"><span class="color-accent">Right Click</span> for Original Size</h4>
+          <h4 class="m-0 font-weight-light"><span class="color-accent">ESC</span> for Quick Search</h4>
+        </div>
+      </div>
+    </div>
+
     <Nuxt />
+
+    <div class="container">
+      <div class="credits mt-4 pb-2">
+        <div>Created with ❤️ by <a href="https://legendeffects.co.uk">LegendEffects</a></div>
+        <div>Contribute on <a href="https://github.com/legendeffects/emote.land">Github</a></div>
+        <div class="color-sub">(yes, they're emojis, but emoji.land was £1000)</div>
+      </div>
+    </div>
+
+    <CommandPalette />
+    <Alert />
   </div>
 </template>
 
-<style>
-html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
+<script>
+import { mapGetters } from 'vuex';
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
+export default {
+  computed: {
+    ...mapGetters({
+      'emoteCount': 'emotes/size'
+    })
+  }
 }
+</script>
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+<style scoped>
+.title {
+  font-size: 2.5rem;
 }
 </style>
