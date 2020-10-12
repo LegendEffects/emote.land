@@ -3,7 +3,7 @@
     <div class="container">
       <input class="search-box mb-4" v-model="search" placeholder="Search for an emote..." autofocus>
 
-      <div class="grid">
+      <div class="grid text-center">
         <ImageDisplay class="column" v-for="(img, x) of filter(search)" :key="x" :image="img" />
       </div>
 

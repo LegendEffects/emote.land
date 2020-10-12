@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center">
+  <div>
     <div class="image-container" @click.left.prevent="copy(false)" @click.prevent.right="copy(true)">
       <img class="m-auto" :src="`emojis/large/${image.rel}`" :alt="image.rel">
     </div>
@@ -48,5 +48,7 @@ export default {
   img {
     width: 100%;
   }
+
+  overflow: hidden;
 }
 </style>
