@@ -15,9 +15,9 @@ function build() {
     if(file == 'resized') continue;
 
     if(file.match(/\.gif$/)) {
-      execFile(gifsicle, ['--resize-fit-width', '32', '-o', `${output}/${file}`, `${folder}/${file}`]);
+      execFile(gifsicle, ['--resize-fit-width', '48', '-o', `${output}/${file}`, `${folder}/${file}`]);
     } else if(file.match(/\.png$/)) {
-      sharp(`${folder}/${file}`).resize({width: 32}).toFile(`${output}/${file}`).catch(e => {
+      sharp(`${folder}/${file}`).resize({width: 48}).toFile(`${output}/${file}`).catch(e => {
         console.info(`Happened while parsing: ${file}`);
         console.error(e);
       });
