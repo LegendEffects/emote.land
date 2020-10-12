@@ -1,4 +1,4 @@
-import logging from "./logging";
+import logging from "./Logging";
 
 export default function createLocalStoragePlugin({ moduleName, localStorageName }) {
   return store => {
