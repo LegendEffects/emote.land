@@ -39,9 +39,6 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
   ],
 
-  router: {
-    base: '/Dismote/'
-  },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     postcss: {
