@@ -5,6 +5,8 @@
       <h6 class="m-0"><span class="highlight">Left Click</span> for 48x48</h6>
       <h6 class="m-0"><span class="highlight">Right Click</span> for Original Size</h6>
 
+      <input v-model="search" class="search-box" placeholder="Search...">
+
       <div class="row" v-for="(row, i) of chunkedImages" :key="i">
         <div class="two columns" v-for="(image, x) of row" :key="x">
 
@@ -42,6 +44,7 @@ function chunk(arr, size) {
 export default {
   data() {return {
     images: [],
+    search: '',
     alert: null
   }},
 
@@ -68,7 +71,10 @@ export default {
   },
   computed: {
     chunkedImages() {
-      return chunk(this.images, 6);
+      const regexp = new RegExp(this.search, 'i')
+      const img = this.images.filter(el => regexp.test(el.rel));
+
+      return chunk(img, 6);
     }
   }
 }
@@ -97,6 +103,21 @@ body {
 .credits {
   margin-top: 2rem;
   font-size: 1rem;
+}
+
+.search-box {
+  margin-top: 1rem;
+  background: var(--bg-color2);
+  color: var(--text-color);
+  width: 100%;
+  border-radius: .5rem;
+  padding: .75rem 1rem;
+  transition: all .2s ease;
+  outline: none;
+  border: 1px solid var(--bg-color2);
+}
+.search-box:focus {
+  border: 1px solid var(--accent-color);
 }
 
 .container {
