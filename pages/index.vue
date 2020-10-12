@@ -33,13 +33,6 @@
 </template>
 
 <script>
-// https://www.w3resource.com/javascript-exercises/fundamental/javascript-fundamental-exercise-265.php
-function chunk(arr, size) {
-  return Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
-    arr.slice(i * size, i * size + size)
-  );
-}
-
 // File Pulling originated from https://stackoverflow.com/questions/54095215/how-to-get-all-the-image-files-in-a-directory-using-vue-js-nuxt-js
 export default {
   data() {return {
@@ -69,6 +62,7 @@ export default {
       }, 3000);
     }
   },
+
   computed: {
     chunkedImages() {
       return this.images.filter(el => new RegExp(this.search, 'i').test(el.rel));
