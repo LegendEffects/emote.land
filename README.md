@@ -1,7 +1,17 @@
-# dismote
+# Emote.land
+### For when Discord Nitro just costs too much.
+[View in Production](https://emote.land)
 
-## Build Setup
+## Introduction
+After [ItzDlg](https://github.com/Itzdlg) made a dumdum version with a pure HTML table and a Java "auto builder", I made this, much nicer :)
 
+## Using
+* [Nuxt](https://nuxtjs.org/)
+* [Sharp](https://sharp.pixelplumbing.com)
+* [Gifsicle](https://www.lcdf.org/gifsicle/)
+* [Travis CI](https://travis-ci.com)
+
+## Usage
 ```bash
 # install dependencies
 $ yarn install
@@ -16,5 +26,3 @@ $ yarn start
 # generate static project
 $ yarn generate
 ```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
