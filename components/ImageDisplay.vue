@@ -3,7 +3,7 @@
     <div class="image-container" @click.prevent.left.exact="copy(false)" @click.prevent.exact.right="copy(true)" @click.prevent.shift="favorite()">
       <img class="m-auto" :src="`emojis/large/${image.rel}`" :alt="image.rel">
     </div>
-    <div class="image-title">{{ image.rel.replace('./', '') }}</div>
+    <div class="image-title" :class="{'color-accent': isFavorited}">{{ image.rel.replace('./', '') }}</div>
   </div>
 </template>
 
@@ -23,6 +23,11 @@ export default {
       this.$favorites.toggle(this.image).then(added => {
         this.$alert(added ? 'Added to favorites.' : 'Removed from favorites.');
       });
+    }
+  },
+  computed: {
+    isFavorited() {
+      return this.$favorites.has(this.image);
     }
   }
 }
