@@ -1,7 +1,7 @@
 <template>
   <div class="color-text">
     <div class="container">
-      <div class="d-flex mb-2 mt-2">
+      <div class="d-flex mb-2 mt-2 flex-wrap">
         <div class="d-flex flex-column">
           <div class="d-flex">
             <h1 class="title color-accent font-weight-normal m-0 my-auto">Emote.Land</h1>
