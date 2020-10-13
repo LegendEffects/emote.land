@@ -60,7 +60,8 @@ export default {
     generate: {
       ignore: [
         'img'
-      ]
+      ],
+      cache: false
     }
   }
 }
