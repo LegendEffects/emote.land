@@ -3,6 +3,8 @@
 [View in Production](https://emote.land)
 
 ## Introduction
+Themes are ported from [Monkey Type](https://monkeytype.com/) check their [GitHub](https://github.com/Miodec/monkeytype) <3
+
 After [ItzDlg](https://github.com/Itzdlg) made a dumdum version with a pure HTML table and a Java "auto builder", I made this, much nicer :)
 
 ## Using
