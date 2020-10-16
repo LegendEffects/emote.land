@@ -60,7 +60,7 @@
     </div>
 
     <ThemePalette ref="themePalette" />
-    <QuickActions />
+    <QuickActions @switchTheme="$refs.themePalette.show()" />
     <Alert />
   </div>
 </template>

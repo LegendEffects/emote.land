@@ -11,6 +11,14 @@ export default {
   }},
 
   created() {
+    this.entries.push({
+      id: 'switchTheme',
+      name: 'Switch Theme',
+      run: () => {
+        this.$emit('switchTheme');
+      }
+    });
+
     // Routes
     this.entries.push({
       id: 'switchPage',
