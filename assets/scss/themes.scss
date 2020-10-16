@@ -131,7 +131,7 @@
   --bg-color: #121520;
   --bg-color2: #{lighten(#121520, 5%)};
   --sub-color: #676e8a;
-  --caret-color: #fff;
+  --accent-color: #fff;
   --text-color: #fff;
 }
 
@@ -419,7 +419,7 @@
   --bg-color: #242933;
   --bg-color2: #{lighten(#242933, 5%)};
   --sub-color: #617b94;
-  --caret-color: #d8dee9;
+  --accent-color: #d8dee9;
   --text-color: #d8dee9;
 }
 
@@ -443,7 +443,7 @@
   --bg-color: #e9e5cc;
   --bg-color2: #{lighten(#e9e5cc, 5%)};
   --sub-color: #b7b39e;
-  --caret-color: #92946f;
+  --accent-color: #92946f;
   --text-color: #373731;
 }
 
@@ -587,7 +587,7 @@
   --bg-color: #191a1b;
   --bg-color2: #{lighten(#191a1b, 5%)};
   --sub-color: #48494b;
-  --caret-color: #79a617;
+  --accent-color: #79a617;
   --text-color: #e7eae0;
 }
 
