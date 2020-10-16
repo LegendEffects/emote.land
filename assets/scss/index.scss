@@ -1,14 +1,7 @@
 @import "transition";
 @import "utility";
 @import "elements";
-
-:root {
-  --bg-color: #323437;
-  --bg-color2: #212224;
-  --sub-color: #646669;
-  --text-color: #fff;
-  --accent-color: #e2b714;
-}
+@import "./themes.scss";
 
 html, body, #__nuxt, #__layout, #__layout > div {
   width: 100%;
@@ -25,6 +18,8 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: 'Roboto Mono', monospace;
+
+  transition: color,background-color .5s ease;
 }
 input {
   font-family: 'Roboto Mono', monospace;
@@ -32,4 +27,8 @@ input {
 
 * {
   box-sizing: border-box;
+}
+
+::placeholder {
+  color: var(--sub-color);
 }

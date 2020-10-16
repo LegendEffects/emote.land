@@ -9,7 +9,7 @@
 
       <input class="search" v-model="search" placeholder="Type to search..." ref="searchBox" autofocus>
       <div class="suggestions" ref="suggestions">
-        <div v-for="(suggestion, i) of suggestions" :key="i" class="entry text-sm px-2 py-1 color-sub" :class="{'selected': selected === i}">
+        <div v-for="(suggestion, i) of suggestions" :key="i" class="entry text-sm px-2 py-1 color-sub" :class="{'selected': selected === i}" @click="execute(suggestion, true)">
           <img v-if="suggestion.image !== undefined" :src="suggestion.image">
           <div class="name">{{suggestion.name}}</div>
         </div>
@@ -20,63 +20,21 @@
 
 <script>
 const baseUrl = 'emojis/';
-import { mapGetters } from 'vuex'
 
 export default {
+  props: ['entries'],
+
   data() {return {
     visible: false,
 
     search: '',
     selected: 0,
-    entries: [],
 
     inputs: {
       up: false,
       down: false
     }
   }},
-
-  created() {
-    // Routes
-    this.entries.push({
-      id: 'switchPage',
-      name: 'View all emotes',
-      run: () => {
-        this.$router.push('/');
-      }
-    })
-    this.entries.push({
-      id: 'switchPage',
-      name: 'View favorites',
-      run: () => {
-        this.$router.push('/favorites');
-      }
-    })
-
-    // Emotes
-    const copyEmote = ({ shift }, attributes) => {
-      navigator.clipboard.writeText(new URL(`${baseUrl}${(shift) ? 'large/' : ''}${attributes.rel}`, location).href);
-      this.$alert((shift) ? 'Large version copied to clipboard!' : 'Copied to clipboard!')
-    };
-
-    for(const emote of this.emotes) {
-      this.entries.push({
-        id: 'showEmote',
-        name: `Copy emote ${emote.rel.replace('./', '')}`,
-        image: `emojis/large/${emote.rel}`,
-        attributes: emote,
-        run: copyEmote
-      });
-    }
-  },
-
-  mounted() {
-    window.addEventListener('keydown', (e) => {
-      if(e.key === 'Escape') {
-        this.toggle();
-      }
-    })
-  },
 
   methods: {
     // Navigate
@@ -96,8 +54,14 @@ export default {
       }
       this.updateScroll();
     },
-    execute(e) {
-      const selected = this.suggestions[this.selected];
+    execute(e, force) {
+      let selected;
+      if(force) {
+        selected = e;
+      } else {
+        selected = this.suggestions[this.selected];
+      }
+
       if(selected === undefined) {
         return;
       }
@@ -148,9 +112,6 @@ export default {
   },
 
   computed: {
-    ...mapGetters({
-      'emotes': 'emotes/all'
-    }),
     suggestions() {
       return this.entries.filter(el => new RegExp(this.search, 'i').test(el.name));
     }

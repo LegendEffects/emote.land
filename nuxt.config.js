@@ -34,6 +34,7 @@ export default {
     '~/plugins/alert.js',
     '~/plugins/favorites.js',
     '~/plugins/nuxtClientInit.js',
+    '~/plugins/theme.js',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
