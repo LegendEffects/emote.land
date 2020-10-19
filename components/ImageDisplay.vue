@@ -14,8 +14,7 @@ export default {
   props: ['image'],
   methods: {
     copy(large) {
-      let url = `${baseUrl}${(large) ? 'large/' : ''}${this.image.rel}`;
-      navigator.clipboard.writeText(new URL(url, location).href);
+      navigator.clipboard.writeText(new URL(`${baseUrl}${(large) ? 'large/' : ''}${this.image.rel}`, location).href);
 
       this.$alert((large) ? 'Large version copied to clipboard!' : 'Copied to clipboard!');
     },
