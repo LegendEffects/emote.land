@@ -62,7 +62,12 @@ export default {
       ignore: [
         'img'
       ],
-      cache: false
+      cache: () => ([
+        '.nuxt/',
+        'dist/',
+        'node_modules',
+        'README.md'
+      ])
     }
   }
 }
