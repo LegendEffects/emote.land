@@ -38,6 +38,7 @@ export default {
   font-size: 1rem;
   word-break: break-all;
 }
+
 .image-container {
   display: flex;
 
