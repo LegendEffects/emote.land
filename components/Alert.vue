@@ -17,7 +17,7 @@ export default {
       exists: 'alert/exists',
       alert: 'alert/getAlert',
       msLeft: 'alert/getMsLeft'
-    })
+    }),
   }
 }
 </script>
