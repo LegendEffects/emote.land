@@ -44,7 +44,7 @@
             <div>
               <div>Created with ❤️ by <a href="https://legendeffects.co.uk">LegendEffects</a></div>
               <div>Contribute on <a href="https://github.com/legendeffects/emote.land">Github</a></div>
-              <div class="color-sub">(yes, they're emojis, but emoji.land was £1000)</div>
+              <div class="color-sub">(yes, they're emojis, but emoji.land was £1000, don't blame me.)</div>
             </div>
             <div class="ml-auto my-auto" @click="$refs.themePalette.show()">
               <div class="d-flex">
