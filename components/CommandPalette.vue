@@ -122,7 +122,6 @@ export default {
 <style lang="scss" scoped>
 .command-palette-container {
   position: fixed;
-
   top: 0;
   left: 0;
 
