@@ -3,8 +3,8 @@
     <div class="container">
       <div class="d-flex mb-2 mt-2 flex-wrap">
         <div class="d-flex flex-column">
-          <div class="d-flex">
-            <h1 class="title color-accent font-weight-normal m-0 my-auto">Emote.Land</h1>
+          <div class="d-flex items-center">
+            <h1 class="title color-accent font-weight-normal m-0">Emote.Land</h1>
 
             <div class="ml-4 my-auto d-flex navbar">
 
@@ -26,12 +26,20 @@
         </div>
 
 
-        <div class="ml-auto text-right text-sm my-auto">
+        <div class="md:d-flex d-none flex-column ml-auto text-right text-sm">
           <h4 class="m-0 font-weight-light"><span class="color-accent">Left Click</span> for 48x48</h4>
           <h4 class="m-0 font-weight-light"><span class="color-accent">Right Click</span> for Original Size</h4>
           <h4 class="m-0 font-weight-light"><span class="color-accent">Shift Click</span> to Favorite</h4>
           <h4 class="m-0 font-weight-light"><span class="color-accent">ESC</span> for Quick Search</h4>
         </div>
+
+        <div class="md:d-none d-flex flex-column mt-2 text-left text-sm">
+          <h4 class="m-0 font-weight-light"><span class="color-accent">Tap</span> for 48x48</h4>
+          <h4 class="m-0 font-weight-light"><span class="color-accent">Tap and Hold</span> for Original Size</h4>
+          <h4 class="m-0 font-weight-light"><span class="color-accent">Double Tap</span> to Favorite</h4>
+          <!-- Quick search is unavailable on mobile -->
+        </div>
+
       </div>
     </div>
 
