@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="image-container" @click.prevent.left.exact="copy(false)" @click.prevent.exact.right="copy(true)" @click.prevent.shift="favorite()">
+    <div class="image-container" @click.prevent.left.exact="copy(false)" @click.prevent.exact.right="copy(true)" @click.prevent.shift="favorite()" @dblclick.prevent="favorite()">
       <img class="m-auto" :src="`emojis/large/${image.rel}`" :alt="image.rel">
     </div>
     <div class="image-title" :class="{'color-accent': isFavorited}">{{ image.rel.replace('./', '') }}</div>
