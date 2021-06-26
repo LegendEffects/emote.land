@@ -1,0 +1,19 @@
+$screenSizes: (
+  "md": "768"
+);
+
+@each $type in "none", "inline-block" {
+  .d-#{$type} {
+    display: #{$type};
+  }
+
+  @each $sizeKey, $sizeVal in $screenSizes {
+    .#{$sizeKey} {
+      &\:d-#{$type} {
+        @media screen and (min-width: #{$sizeVal}px) {
+          display: #{$type} !important;
+        }
+      }
+    }
+  }
+}

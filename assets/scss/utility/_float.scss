@@ -1,0 +1,5 @@
+@each $type in "none", "left", "right", "initial", "inherit" {
+  .float-#{$type} {
+    float: #{$type};
+  }
+}
