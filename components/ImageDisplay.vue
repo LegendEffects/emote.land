@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="image-container" @click.prevent.left.exact="copy(false)" @click.prevent.exact.right="copy(true)" @click.prevent.shift="favorite()">
+    <div class="image-container" @click.prevent.left.exact="copy(false), doubleClick()" @click.prevent.exact.right="copy(true)">
       <img class="m-auto" :src="`emojis/large/${image.rel}`" :alt="image.rel">
     </div>
     <div class="image-title" :class="{'color-accent': isFavorited}">{{ image.rel.replace('./', '') }}</div>
@@ -12,6 +12,12 @@ const baseUrl = 'emojis/';
 
 export default {
   props: ['image'],
+  data() {
+    return {
+      clicks: 0,
+      delay: 300,
+    }
+  },
   methods: {
     copy(large) {
       navigator.clipboard.writeText(new URL(`${baseUrl}${(large) ? 'large/' : ''}${this.image.rel}`, location).href);
@@ -22,6 +28,19 @@ export default {
       this.$favorites.toggle(this.image).then(added => {
         this.$alert(added ? 'Added to favorites.' : 'Removed from favorites.');
       });
+    },
+    doubleClick() {
+      this.clicks += 1;
+
+      if (this.clicks === 1) {
+        setTimeout(() => {
+          if (this.clicks === 2) {
+            this.favorite();
+          }
+
+          this.clicks = 0;
+        }, this.delay)
+      }
     }
   },
   computed: {
